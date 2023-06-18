@@ -413,7 +413,7 @@ object "ERC721" {
       /// @param from The address of the sender
       /// @param to The address of the recipient
       /// @param id The token ID
-      /// @param data Additional data to be passed to the recipient's onERC1155Received function
+      /// @param data Additional data to be passed to the recipient's onERC721Received function
       function doSafeTransferAcceptanceCheck(from, to, id, data) {
         /// Check the size of the recipient's code
         let size := extcodesize(to)
@@ -601,7 +601,7 @@ object "ERC721" {
       /// @param approved The new approval status.
       function emitApprovalForAll(account, operator, approved) {
           
-        // The hash of the ApprovalForAll signature for the ERC1155 standard
+        // The hash of the ApprovalForAll signature for the ERC721 standard
         let signatureHash := 0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31
           
         // Copy the approval status to memory
@@ -615,7 +615,7 @@ object "ERC721" {
       /// @param value The URI value to emit.
       /// @param id The token ID associated with the URI.
       function emitURI(value, id) {
-        // The hash of the URI signature for the ERC1155 standard
+        // The hash of the URI signature for the ERC721 standard
         let signatureHash := 0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31
 
         // Copy the URI value to memory
@@ -703,17 +703,7 @@ object "ERC721" {
         revert(0x00, 0x84)
       }
 
-      /// Function to revert with a custom message and size when burn amount exceeds balance.
-      /// "ERC1155: burn amount exceeds balance"
-      function revertWithBurnAmountExceedsBalance() {
-        mstore(0x00, 0x8c379a000000000000000000000000000000000000000000000000000000000)
-        mstore(0x04, 0x0000000000000000000000000000000000000000000000000000000000000020)
-        mstore(0x24, 36)
-        mstore(0x44, 0x455243313135353a206275726e20616d6f756e7420657863656564732062616c)
-        mstore(0x64, 0x616e636500000000000000000000000000000000000000000000000000000000)
-
-        revert(0x00, 0x84)
-      }
+  
 
       /// Function to revert with a custom message and size when ERC721Receiver rejected tokens.
       // "ERC721: ERC721Receiver rejected tokens"

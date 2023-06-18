@@ -1,0 +1,109 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122014b4dd19f223e3305b7031913b6bad3044b8db9da000af1af7d0c68f8a3481d964736f6c634300080f0033",
+    "sourceMap": "65:32:9:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052600080fdfea264697066735822122014b4dd19f223e3305b7031913b6bad3044b8db9da000af1af7d0c68f8a3481d964736f6c634300080f0033",
+    "sourceMap": "65:32:9:-:0;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/ERC1155ReceiverEmpty.sol\":\"ERC1155ReceiverEmpty\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/solmate/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"src/ERC1155ReceiverEmpty.sol\":{\"keccak256\":\"0x58a5dd021c3b64affb30ed575826e5985377bbdb1fa61dea32f7d0fe18eb8a2b\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://37022e649a983679187c2695669fc220d89348c7058ec08781c85ff3dca7e22d\",\"dweb:/ipfs/QmdrumYEWySmRcUvqCbi2hzj3asriN6fAghFJ1ojW8taJ6\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.15+commit.e14f2714"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        ":ds-test/=lib/solmate/lib/ds-test/src/",
+        ":forge-std/=lib/forge-std/src/",
+        ":solmate/=lib/solmate/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/ERC1155ReceiverEmpty.sol": "ERC1155ReceiverEmpty"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/ERC1155ReceiverEmpty.sol": {
+        "keccak256": "0x58a5dd021c3b64affb30ed575826e5985377bbdb1fa61dea32f7d0fe18eb8a2b",
+        "urls": [
+          "bzz-raw://37022e649a983679187c2695669fc220d89348c7058ec08781c85ff3dca7e22d",
+          "dweb:/ipfs/QmdrumYEWySmRcUvqCbi2hzj3asriN6fAghFJ1ojW8taJ6"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/ERC1155ReceiverEmpty.sol",
+    "id": 22027,
+    "exportedSymbols": {
+      "ERC1155ReceiverEmpty": [
+        22026
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "39:58:9",
+    "nodes": [
+      {
+        "id": 22025,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:9",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 22026,
+        "nodeType": "ContractDefinition",
+        "src": "65:32:9",
+        "nodes": [],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ERC1155ReceiverEmpty",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          22026
+        ],
+        "name": "ERC1155ReceiverEmpty",
+        "nameLocation": "74:20:9",
+        "scope": 22027,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 9
+}

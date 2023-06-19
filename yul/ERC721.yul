@@ -294,7 +294,6 @@ object "ERC721" {
         /// Decode token IDs from calldata
         let idsOffset := decodeAsUint(2)
         
-        // question: why did we add 4 ?
         /// Calculate lengths of token IDs arrays
         let lenIdsOffset := add(4, idsOffset)
 
@@ -429,10 +428,9 @@ object "ERC721" {
             mstore(0x104, caller())
             mstore(0x124, from)
             mstore(0x144, id)
-            // question: what is this ? 
             mstore(0x164, 0x184)
-
-            // question: what is this ? 
+            mstore(0x184, getDataLength(data))
+            
             /// Copy data to memory
             let endPtr := copyDataToMem(0x1a0, data)
 
@@ -531,16 +529,23 @@ object "ERC721" {
 
         /// Calculate the total length of the data to copy
         let totalLength := add(0x20, dataLength) // dataLength+data
-        let remainder := mod(dataLength, 0x20)
-        if remainder {
-            totalLength := add(totalLength, sub(0x20, remainder))
-        }
+        // let remainder := mod(dataLength, 0x20)
+        // if remainder {
+        //     totalLength := add(totalLength, remainder)
+        // }
 
         /// Copy the data from calldata to memory
         calldatacopy(memPtr, dataLengthOff, totalLength)
 
         /// Update the memory pointer to the next available location
         updatedMemPtr := add(memPtr, totalLength)
+      }
+
+      function getDataLength(dataOff) -> dataLength {
+        /// Get the offset of the data length in calldata
+        let dataLengthOff := add(dataOff, 4)
+        /// Load the data length from calldata
+        dataLength := calldataload(dataLengthOff)
       }
 
       // ╔══════════════════════════════════════════╗
@@ -708,7 +713,6 @@ object "ERC721" {
       /// Function to revert with a custom message and size when ERC721Receiver rejected tokens.
       // "ERC721: ERC721Receiver rejected tokens"
       function revertWithRejectedTokens() {
-            // question: what is this ? 
         mstore(0x00, 0x8c379a000000000000000000000000000000000000000000000000000000000)
         mstore(0x04, 0x20)
         mstore(0x24, 38)
@@ -721,7 +725,6 @@ object "ERC721" {
       /// Function to revert with a custom message and size when transferring tokens to a non-ERC721Receiver implementer.
       // "ERC721: transfer to non-ERC721Receiver implementer"
       function revertWithNonERC721Receiver() {
-            // question: what is this ? 
         mstore(0x00, 0x8c379a000000000000000000000000000000000000000000000000000000000)
         mstore(0x04, 0x20)
         mstore(0x24, 50)
